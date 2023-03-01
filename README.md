@@ -1,4 +1,4 @@
-# Tab vs Service worker throttling demo
+# Tab vs service worker throttling demo
 
 Demonstrates how timers on tabs are throttled while service worker's aren't.
 For more info on throttling, see: https://blog.chromium.org/2020/11/tab-throttling-and-more-performance.html
@@ -16,4 +16,4 @@ The tab and service worker will start sending each other messages every 5s and b
 15:41:06: sw: cli-to-sw received:  {id: 'o9mqpwlb', timestamp: 1677703266360, message: 'Ping from main thread'}
 ```
 
-Now put the tab into the background for >5min. When you come back, you'll see that messages from the service worker continue to send every 5s and are immediately acknowledged by the client (search for "sw-to-cli"), while messages from the client are only sent roughly once per min (search for "cli-to-sw").
+Now put the tab into the background for ~7min. When you come back, you'll see that messages sent after 5min from the service worker continue to send every 5s and are immediately acknowledged by the client (search for "sw-to-cli"), while messages from the client are only sent roughly once per min (search for "cli-to-sw").
